@@ -1,0 +1,201 @@
+     Usuário:
+
+        Cadastrar novo usuário no marketplace
+        Editar informações do perfil do usuário
+        Visualizar histórico de compras
+        Adicionar produtos à lista de favoritos ou desejos
+        Receber notificações de atualizações de pedidos ou pagamentos
+        Realizar login
+
+    Produto:
+
+    Adicionar novo produto ao marketplace pelo vendedor
+    Editar informações de um produto existente
+    Visualizar detalhes de um produto
+    Adicionar produto ao carrinho de compras
+    Receber recomendações de produtos similares
+
+    Categoria:
+
+    Visualizar todos os produtos de uma categoria específica
+    Filtrar produtos por categoria
+
+    Venda:
+
+    Realizar uma nova venda
+    Visualizar detalhes da venda, incluindo produtos, preço total e informações de pagamento
+    Receber notificações de atualizações de status da venda
+
+    Pedido:
+
+    Fazer um novo pedido de compra
+    Cancelar um pedido existente
+    Visualizar detalhes do pedido, incluindo produtos, preço total e informações de entrega
+    Receber notificações de atualizações de status do pedido
+
+    Pagamento:
+
+    Realizar pagamento pelo comprador
+    Receber notificações de atualizações de status do pagamento
+    Visualizar histórico de pagamentos
+    Integrar com métodos de pagamento
+
+    Entrega:
+
+    Realizar envio pelo vendedor
+    Receber notificações de atualizações de status da entrega
+    Visualizar informações de endereço de entrega
+    Integrar com serviços de envio
+
+    Avaliação:
+
+    Deixar avaliação de um produto ou vendedor pelo comprador
+    Visualizar avaliações de um produto ou vendedor
+
+    Estoque:
+
+    Atualizar a quantidade disponível de um produto pelo vendedor
+    Visualizar informações de estoque de um produto
+    Receber alertas de estoque baixo
+
+    Carrinho de compras:
+
+    Adicionar produtos ao carrinho de compras pelo comprador
+    Remover produtos do carrinho de compras
+    Visualizar detalhes do carrinho de compras, incluindo produtos e preço total
+
+
+    Endereço de entrega: Escolha do endereço de entrega durante o processo de compra, verificação da disponibilidade de entrega para o endereço escolhido, atualização do endereço de entrega por parte do comprador.
+
+    Cupom de desconto: Aplicação de um código de desconto durante o processo de compra, verificação da validade do código de desconto, validação do desconto aplicado.
+    
+    Método de pagamento: Escolha do método de pagamento durante o processo de compra, processamento do pagamento, integração com gateways de pagamento.
+    
+    Taxa de envio: Cálculo da taxa de envio de acordo com o endereço de entrega e peso do produto, visualização da taxa de envio durante o processo de compra.
+    
+    Devolução: Iniciando o processo de devolução, aprovação ou negação da devolução, processamento do reembolso ou troca.
+    
+    Conta bancária: Adição de uma nova conta bancária, verificação da conta bancária, configuração da conta bancária como destino de pagamento.
+    
+    Configurações da conta: Atualização das informações da conta, alteração da senha, gestão de privacidade.
+    
+    Notificação: Envio de notificações de atualizações de pedido ou pagamento, gestão de preferências de notificação.
+    
+    Login: Início de sessão, autenticação do usuário, recuperação de senha.
+    
+    Senha: Alteração da senha, redefinição de senha, proteção contra acesso não autorizado.
+    
+    Perfil: Exibição das informações do perfil, edição das informações do perfil, visualização de atividades recentes.
+    
+    Favoritos: Adição de um produto à lista de favoritos, remoção de um produto da lista de favoritos, visualização da lista de favoritos.
+    
+    Histórico de compras: Visualização do histórico de compras, detalhamento de uma compra específica, reordenação do histórico de compras.
+    
+    Lista de desejos: Adição de um produto à lista de desejos, remoção de um produto da lista de desejos, visualização da lista de desejos.
+
+    Fornecedor: gerenciamento de estoque de produtos, ofertas de preços, listagem de produtos, informações de contato.
+
+    Comissão: cálculo de comissões de vendas, pagamento de comissões ao fornecedor.
+
+    Taxa de retirada: cálculo e cobrança de taxas de retirada de dinheiro, transferência de dinheiro para a conta do vendedor.
+
+    Recomendações: sugestão de produtos para o comprador, personalização de recomendações.
+
+    Campanha publicitária: criação de campanhas publicitárias pelo vendedor, gerenciamento de orçamento de publicidade.
+
+    Status do pedido: atualização de status de pedidos, notificação de mudanças de status.
+
+    Inscrição: processo de registro de usuário, validação de informações de inscrição.
+
+    Verificação de conta: verificação de identidade do usuário, ativação de conta verificada.
+
+    Integração de método de pagamento: integração de gateways de pagamento, processamento de pagamentos.
+
+    Integração de envio: integração com serviços de envio, rastreamento de entrega.
+
+    Gerenciamento de estoque: atualização de quantidade disponível de produtos, geração de alertas para baixo estoque.
+
+    Gerenciamento de vendas: registro de vendas, geração de relatórios de vendas.
+
+    Oferta: criação de ofertas promocionais, exibição de preços promocionais.
+
+    Promoção: criação de promoções, exibição de cupons de desconto.
+
+    Anúncio: criação de anúncios de produtos, exibição de anúncios.
+
+    Marketing: planejamento e execução de campanhas de marketing, geração de relatórios de marketing.
+
+    Página de produto: exibição de detalhes de produtos, opções de compra.
+
+    Filtro: filtragem de resultados de busca, personalização de opções de filtro.
+
+    Busca: pesquisa de produtos, exibição de resultados de busca.
+
+    Comentário: registro de comentários, exibição de comentários.
+
+    Resposta: resposta a comentários ou perguntas, exibição de respostas.
+
+    Casos de uso de Pergunta:
+
+    Perguntar sobre características de um produto antes de comprar.
+    Solicitar informações adicionais sobre a entrega.
+
+    Casos de uso de Suporte:
+
+        Resolver problemas técnicos na utilização do marketplace.
+        Receber orientações sobre processos de compra e venda.
+
+    Casos de uso de Chat:
+
+        Esclarecer dúvidas sobre um produto.
+        Negociar detalhes de entrega e pagamento.
+
+    Casos de uso de Relatório:
+
+        Verificar o desempenho de vendas.
+        Analisar o histórico de transações.
+
+    Casos de uso de Estatísticas:
+
+        Acompanhar o número de usuários e vendas do marketplace.
+        Verificar a performance de produtos e categorias.
+
+    Casos de uso de Dashboard:
+
+        Monitorar as principais métricas do marketplace.
+        Receber alertas sobre problemas ou oportunidades.
+
+    Casos de uso de Configurações do sistema:
+
+        Definir taxas de envio e outros valores.
+        Configurar integrações com outros sistemas.
+
+    Casos de uso de Integração:
+
+        Integrar o marketplace com sistemas de pagamento.
+        Integrar o marketplace com sistemas de envio.
+
+    Casos de uso de Log:
+
+        Verificar o histórico de atividades no marketplace.
+        Monitorar a utilização do sistema.
+
+    Casos de uso de Alerta:
+
+        Receber notificações sobre erros ou problemas críticos.
+        Receber alertas sobre oportunidades ou riscos.
+
+    Casos de uso de Criptografia:
+
+        Proteger informações sensíveis, como senhas e dados de pagamento.
+        Garantir a privacidade de informações pessoais.
+
+    Casos de uso de Autenticação:
+
+        Verificar a identidade de usuários antes de permitir acesso a informações ou funcionalidades.
+        Controlar o acesso a áreas restritas do marketplace.
+
+    Casos de uso de Segurança:
+
+        Proteger informações sensíveis, como dados de pagamento.
+        Prevenir fraudes e ataques cibernéticos.

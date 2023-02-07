@@ -1,0 +1,510 @@
+    
+    
+    Usuário: Representa o usuário do marketplace, que pode ser comprador ou vendedor.
+        atributos:
+            Nome: o nome completo do usuário é uma informação importante para identificação e personalização da experiência do usuário.
+
+            Email: o email do usuário é usado para autenticação e comunicação, além de ser uma forma de identificação única do usuário.
+
+            Senha: a senha do usuário é usada para autenticação e proteção de suas informações pessoais.
+
+            Data de nascimento: a data de nascimento pode ser usada para personalizar a experiência do usuário ou para verificação de idade em algumas aplicações.
+
+            Endereço: o endereço do usuário é usado para entregas ou faturamento em aplicações comerciais.
+
+            Telefone: o número de telefone pode ser usado para comunicação ou verificação de identidade.
+            
+        regras de negocio:
+            O usuário deve fornecer informações verdadeiras ao se cadastrar no sistema.
+            O usuário é responsável pelas atividades realizadas em sua conta.
+            O usuário tem o direito de solicitar a exclusão de sua conta a qualquer momento.
+
+    Produto: Representa o item que está sendo vendido no marketplace.
+        atributos:
+            Nome do Produto: é a identificação única do produto e o principal fator de pesquisa para os compradores.
+            Descrição do Produto: permite que o comprador tenha mais informações detalhadas sobre o produto, incluindo suas características, especificações e benefícios.
+            Preço: o preço é o fator decisivo para muitos compradores e, portanto, é importante que seja preciso e atualizado regularmente.
+            Imagens do Produto: as imagens são uma representação visual do produto e ajudam a criar expectativas sobre sua aparência e qualidade.
+            Categoria: a categoria ajuda a agrupar produtos similares e permite que os compradores encontrem rapidamente o que procuram.
+            Marca: a marca fornece informações sobre a origem e a qualidade do produto e pode influenciar a decisão de compra do comprador.
+            Estoque: o estoque indica a disponibilidade do produto e pode ser usado para controlar a venda do produto.
+            Disponibilidade: indica se o produto está disponível para compra ou se está temporariamente indisponível.
+            SKU (Stock Keeping Unit): é uma identificação única para o produto usada para fins de inventário e gerenciamento de estoque.
+            Código de Barras: permite a leitura automatizada dos produtos e é útil para garantir precisão na gestão de estoque.
+
+        regra de negocio:
+            Nome do Produto: o nome do produto não pode conter palavras ofensivas ou violar direitos autorais. Além disso, o nome do produto deve ser claro e descritivo para facilitar a busca pelos compradores.
+
+            Descrição do Produto: a descrição do produto não deve conter informações falsas ou enganosas e deve ser claramente escrita, sem erros de ortografia. Além disso, a descrição do produto deve ser revisada regularmente para garantir que ainda seja precisa e atual.
+
+            Preço: o preço do produto deve ser preciso e atualizado regularmente. Além disso, o preço não pode ser definido com valores que sejam claramente injustos ou abusivos.
+
+            Imagens do Produto: as imagens do produto devem ser claras e precisas, mostrando o produto de diferentes ângulos e permitindo que o comprador tenha uma visão completa do produto antes de fazer a compra.
+
+            Categoria: a categoria do produto deve ser definida de maneira clara e precisa, permitindo que os compradores encontrem rapidamente o que procuram. Além disso, a categoria do produto não pode ser mudada sem uma boa razão.
+
+            Marca: a marca do produto deve ser precisa e atualizada regularmente. Além disso, a marca não pode ser usada para fins de publicidade enganosa ou para violar direitos autorais.
+
+            Estoque: o estoque do produto deve ser preciso e atualizado regularmente. Além disso, o estoque não pode ser manipulado para fins fraudulentos ou enganosos.
+
+            Disponibilidade: a disponibilidade do produto deve ser precisa e atualizada regularmente. Além disso, a disponibilidade não pode ser manipulada para fins fraudulentos ou enganosos.
+
+            SKU (Stock Keeping Unit): o SKU do produto deve ser preciso e atualizado regularmente. Além disso, o SKU não pode ser usado para fins fraudulentos ou enganosos.
+
+            Código de Barras: o código de barras do produto deve ser preciso e atualizado regularmente. Além disso, o código de barras não pode ser usado para fins fraudulentos ou enganosos.
+
+    Categoria: Representa uma categoria de produto, como eletrônicos, roupas, etc.
+
+        atributos:
+            Nome da Categoria: o nome da categoria deve ser claro e descritivo, permitindo que os compradores encontrem rapidamente a categoria que procuram. Além disso, o nome da categoria não pode conter palavras ofensivas ou violar direitos autorais.
+
+            Descrição da Categoria: a descrição da categoria deve ser claramente escrita e descrever com precisão o que a categoria inclui. Além disso, a descrição da categoria não pode conter informações falsas ou enganosas.
+
+            Imagem da Categoria: a imagem da categoria deve ser claramente relacionada ao conteúdo da categoria e deve ser precisa e atualizada regularmente.
+
+            Subcategorias: as subcategorias da categoria devem ser claramente definidas e precisas, permitindo que os compradores encontrem rapidamente o que procuram. Além disso, as subcategorias não podem ser mudadas sem uma boa razão.
+
+            Produtos na Categoria: a lista de produtos na categoria deve ser precisa e atualizada regularmente, permitindo que os compradores encontrem rapidamente o que procuram. Além disso, os produtos na categoria não podem ser mudados sem uma boa razão.
+
+            Destaque da Categoria: a categoria pode ser destacada na página principal do marketplace, para atrair mais compradores.
+
+        regras de negocio:
+            Nome da Categoria: o nome da categoria não pode conter palavras ofensivas ou violar direitos autorais, e deve ser claro e descritivo. Se o nome da categoria for alterado, o sistema deve verificar se ele ainda cumpre essas regras.
+
+            Descrição da Categoria: a descrição da categoria não pode conter informações falsas ou enganosas, e deve ser claramente escrita e descrever precisamente o que a categoria inclui. Se a descrição da categoria for alterada, o sistema deve verificar se ela ainda cumpre essas regras.
+
+            Imagem da Categoria: a imagem da categoria deve ser claramente relacionada ao conteúdo da categoria, precisa e atualizada regularmente. Se a imagem da categoria for alterada, o sistema deve verificar se ela ainda cumpre essas regras.
+
+            Subcategorias: as subcategorias da categoria devem ser claramente definidas e precisas, e não podem ser mudadas sem uma boa razão. Se uma subcategoria for adicionada ou removida, o sistema deve verificar se a mudança cumpre essa regra.
+
+            Produtos na Categoria: a lista de produtos na categoria deve ser precisa e atualizada regularmente, e os produtos na categoria não podem ser mudados sem uma boa razão. Se um produto for adicionado ou removido da categoria, o sistema deve verificar se a mudança cumpre essa regra.
+
+            Destaque da Categoria: a categoria pode ser destacada na página principal do marketplace para atrair mais compradores, mas deve ser revisada regularmente para garantir que ela ainda é relevante e atual.
+
+    Venda: Representa a transação entre comprador e vendedor.
+        atributos:
+            ID da Venda: um identificador único para cada venda.
+
+            Produto: o produto que está sendo vendido.
+
+            Quantidade: a quantidade de produtos vendidos.
+
+            Preço: o preço unitário do produto vendido.
+
+            Preço Total: o preço total da venda, calculado como quantidade x preço unitário.
+
+            Data da Venda: a data em que a venda foi realizada.
+
+            Comprador: o comprador que realizou a venda.
+
+            Endereço de Entrega: o endereço onde o produto será entregue.
+
+            Status da Entrega: o status atual da entrega, como "em andamento", "entregue" ou "devolvido".
+
+            Meio de Pagamento: o meio de pagamento escolhido pelo comprador, como cartão de crédito ou transferência bancária.
+
+            Taxas de Venda: as taxas cobradas pelo marketplace por cada venda, incluindo impostos e taxas de pagamento.
+
+            Receita Líquida: a receita total da venda, subtraindo as taxas cobradas pelo marketplace.
+        regras de negocio:
+            ID da Venda: o ID da venda deve ser único e gerado automaticamente pelo sistema.
+
+            Produto: o produto só pode ser vendido se estiver disponível em estoque.
+
+            Quantidade: a quantidade vendida não pode ser superior à quantidade disponível em estoque.
+
+            Preço: o preço do produto deve ser o preço definido pelo vendedor.
+
+            Preço Total: o preço total deve ser calculado automaticamente como quantidade x preço unitário.
+
+            Data da Venda: a data da venda deve ser registrada automaticamente pelo sistema.
+
+            Comprador: o comprador deve ser um usuário registrado no sistema.
+
+            Endereço de Entrega: o endereço de entrega deve ser fornecido pelo comprador durante o processo de compra.
+
+            Status da Entrega: o status da entrega deve ser atualizado automaticamente pelo sistema de acordo com o andamento da entrega.
+
+            Meio de Pagamento: o meio de pagamento deve ser escolhido pelo comprador durante o processo de compra.
+
+            Taxas de Venda: as taxas de venda devem ser cobradas automaticamente pelo sistema a cada venda.
+
+            Receita Líquida: a receita líquida deve ser calculada automaticamente pelo sistema, subtraindo as taxas cobradas da receita total da venda.
+
+    Pedido: Representa a solicitação de compra de um produto pelo comprador.
+        atributos:
+            ID do Pedido: o ID do pedido deve ser único e gerado automaticamente pelo sistema.
+
+            Data do Pedido: a data do pedido deve ser registrada automaticamente pelo sistema.
+
+            Produtos: o pedido deve conter uma lista de produtos selecionados pelo comprador.
+
+            Quantidade: a quantidade de cada produto deve ser especificada pelo comprador.
+
+            Preço Total: o preço total do pedido deve ser calculado automaticamente pelo sistema como a soma dos preços dos produtos no pedido.
+
+            Comprador: o comprador deve ser um usuário registrado no sistema.
+
+            Endereço de Entrega: o endereço de entrega deve ser fornecido pelo comprador durante o processo de compra.
+
+            Status do Pedido: o status do pedido deve ser atualizado automaticamente pelo sistema de acordo com o andamento da entrega.
+
+            Meio de Pagamento: o meio de pagamento deve ser escolhido pelo comprador durante o processo de compra.
+
+            Taxas de Entrega: as taxas de entrega devem ser cobradas automaticamente pelo sistema a cada pedido.
+
+            Receita Líquida: a receita líquida deve ser calculada automaticamente pelo sistema, subtraindo as taxas cobradas da receita total do pedido.
+
+        regras de negocio:
+            ID do Pedido: o ID do pedido deve ser único e gerado automaticamente pelo sistema a cada novo pedido realizado. Não pode haver duplicidade de IDs.
+
+            Data do Pedido: a data do pedido deve ser registrada automaticamente pelo sistema a cada nova compra e não pode ser alterada.
+
+            Produtos: o pedido deve conter pelo menos um produto e pode conter vários produtos, mas não pode conter produtos que já foram descontinuados ou removidos do catálogo do marketplace.
+
+            Quantidade: a quantidade de cada produto deve ser especificada pelo comprador e deve ser maior que zero. Não pode haver quantidade negativa ou zero de um produto em um pedido.
+
+            Preço Total: o preço total do pedido deve ser calculado automaticamente pelo sistema como a soma dos preços dos produtos no pedido. O preço total não pode ser alterado manualmente pelo comprador ou pelo vendedor.
+
+            Comprador: o comprador deve ser um usuário registrado no sistema e deve ter uma forma válida de pagamento registrada em sua conta para realizar o pedido.
+
+            Endereço de Entrega: o endereço de entrega deve ser fornecido pelo comprador durante o processo de compra e deve ser verificado pelo sistema antes da finalização do pedido para garantir que seja uma entrega válida.
+
+            Status do Pedido: o status do pedido deve ser atualizado automaticamente pelo sistema de acordo com o andamento da entrega. O status do pedido deve ser verificado regularmente pelo comprador e pelo vendedor.
+
+            Meio de Pagamento: o meio de pagamento deve ser escolhido pelo comprador durante o processo de compra e deve ser verificado pelo sistema para garantir que seja uma forma válida de pagamento.
+
+            Taxas de Entrega: as taxas de entrega devem ser cobradas automaticamente pelo sistema a cada pedido e podem ser diferentes para diferentes regiões de entrega ou tipos de entrega.
+
+            Receita Líquida: a receita líquida deve ser calculada automaticamente pelo sistema, subtraindo as taxas cobradas da receita total do pedido. A receita líquida é a quantia que o vendedor recebe após as taxas serem deduzidas.
+
+    Pagamento: Representa o pagamento efetuado pelo comprador para o vendedor.
+        atributos:
+            ID do Pagamento: um identificador único para cada pagamento.
+            ID do Pedido: o identificador do pedido que está sendo pago.
+            Meio de Pagamento: o meio de pagamento utilizado (por exemplo, cartão de crédito, boleto bancário, transferência bancária).
+            Status do Pagamento: o status atual do pagamento (por exemplo, pendente, aprovado, recusado).
+            Data do Pagamento: a data em que o pagamento foi efetuado.
+            Valor Total: o valor total do pagamento.
+        regras de negocio:
+
+            O ID do Pagamento deve ser único para cada pagamento.
+            O ID do Pedido deve estar vinculado a um pedido válido.
+            O meio de pagamento deve ser escolhido pelo usuário antes de finalizar o pedido.
+            O status do pagamento deve ser atualizado automaticamente conforme o pagamento é processado.
+            A data do pagamento deve ser preenchida automaticamente quando o pagamento é efetuado.
+            O valor total do pagamento deve ser calculado automaticamente com base nos itens incluídos no pedido.
+
+
+
+    Entrega: Representa o envio do produto do vendedor para o comprador.
+        atributos:    
+            ID da Entrega: um identificador único para cada entrega.
+            ID do Pedido: o identificador do pedido que está sendo entregue.
+            Status da Entrega: o status atual da entrega (por exemplo, pendente, em trânsito, entregue).
+            Data de Envio: a data em que o pedido foi enviado.
+            Data de Entrega: a data em que o pedido foi entregue.
+            Endereço de Entrega: o endereço para onde o pedido deve ser entregue.
+            CEP: o CEP do endereço de entrega.
+            Nome do Destinatário: o nome da pessoa que deve receber a entrega.
+            
+        regras de negocio:
+            O ID da Entrega deve ser único para cada entrega.
+            O ID do Pedido deve estar vinculado a um pedido válido.
+            O status da entrega deve ser atualizado automaticamente conforme a entrega é processada.
+            A data de envio deve ser preenchida automaticamente quando o pedido é enviado.
+            A data de entrega deve ser preenchida automaticamente quando o pedido é entregue.
+            O endereço de entrega deve ser fornecido pelo usuário ao finalizar o pedido.
+            O CEP deve ser fornecido pelo usuário ao finalizar o pedido.
+            O nome do destinatário deve ser fornecido pelo usuário ao finalizar o pedido.
+    Avaliação: Representa a avaliação de um produto ou vendedor pelo comprador.
+        atributos:
+            ID da Avaliação: um identificador único para cada avaliação.
+            ID do Produto: o identificador do produto avaliado.
+            ID do Usuário: o identificador do usuário que fez a avaliação.
+            Nota: a nota dada pelo usuário para o produto (em uma escala de 1 a 5).
+            Comentário: um comentário escrito pelo usuário sobre o produto.
+            Data da Avaliação: a data em que a avaliação foi feita.
+        regras de negocio:
+            O ID da Avaliação deve ser único para cada avaliação.
+            O ID do Produto deve estar vinculado a um produto válido.
+            O ID do Usuário deve estar vinculado a um usuário válido.
+            A nota dada pelo usuário deve ser uma nota válida (entre 1 e 5).
+            O comentário escrito pelo usuário deve ter no mínimo 10 caracteres e no máximo 500 caracteres.
+            A data da avaliação deve ser preenchida automaticamente quando a avaliação for feita.
+    Estoque: Representa a quantidade disponível de um produto.
+        atributos:
+            ID do Produto: o identificador do produto que está sendo gerenciado no estoque.
+            Quantidade Disponível: a quantidade de itens disponíveis para venda.
+            Quantidade Mínima: a quantidade mínima de itens que devem estar disponíveis no estoque.
+            Data de Chegada: a data em que o produto foi adicionado ao estoque.
+            Data de Saída: a data em que o produto foi vendido ou retirado do estoque.
+            Preço de Compra: o preço que foi pago pelo produto ao fornecedor.
+            Preço de Venda: o preço de venda do produto ao cliente.
+        regras de negocio:
+            O ID do Produto deve estar vinculado a um produto válido.
+            A quantidade disponível deve ser atualizada automaticamente a cada venda.
+            A quantidade mínima deve ser definida pelo gerenciamento e usada para gerar alertas quando a quantidade disponível for abaixo do mínimo.
+            A data de chegada deve ser preenchida automaticamente quando o produto é adicionado ao estoque.
+            A data de saída deve ser preenchida automaticamente quando o produto é vendido ou retirado do estoque.
+            O preço de compra deve ser fornecido pelo fornecedor ou pelo gerenciamento ao adicionar o produto ao estoque.
+            O preço de venda deve ser definido pelo gerenciamento e pode ser diferente do preço de compra.
+
+    Carrinho de compras: Representa a lista de produtos selecionados pelo comprador para compra.
+        atributos:
+            ID do Usuário: o identificador do usuário que está usando o carrinho de compras.
+            ID do Produto: o identificador do produto que está sendo adicionado ao carrinho.
+            Quantidade: a quantidade de itens do produto que estão sendo adicionados ao carrinho.
+            Preço Total: o preço total dos itens no carrinho, calculado com base na quantidade e no preço de venda do produto.
+            Data de Adição: a data e hora em que o produto foi adicionado ao carrinho.
+            Status do Carrinho: o status atual do carrinho, incluindo "Ativo", "Inativo", "Finalizado" e "Expirado".
+        regras de negocio:
+
+            O ID do Usuário deve estar vinculado a um usuário válido.
+            O ID do Produto deve estar vinculado a um produto válido.
+            A quantidade deve ser um número inteiro positivo e não pode exceder a quantidade disponível no estoque.
+            O preço total deve ser atualizado automaticamente com base na quantidade e no preço de venda do produto.
+            A data de adição deve ser preenchida automaticamente ao adicionar o produto ao carrinho.
+            O status do carrinho deve ser atualizado automaticamente a cada ação do usuário, como adicionar ou remover um item, finalizar ou expirar o carrinho.
+    Endereço de entrega: Representa o endereço para onde o produto será entregue.
+        atributos:
+            ID do Usuário: o identificador do usuário ao qual o endereço de entrega está vinculado.
+            Nome do Destinatário: o nome da pessoa a quem o endereço está sendo enviado.
+            Endereço: o endereço completo, incluindo rua, número, complemento, bairro, cidade, estado e código postal.
+            Telefone: o número de telefone da pessoa a quem o endereço está sendo enviado.
+            Tipo de Endereço: o tipo de endereço, incluindo "Residencial", "Comercial" ou "Outro".
+            Padrão: uma indicação se o endereço é o endereço padrão para entrega do usuário.
+            
+        regras de negocio:
+            O ID do Usuário deve estar vinculado a um usuário válido.
+            O Nome do Destinatário deve ser preenchido e não pode conter caracteres inválidos.
+            O Endereço deve ser preenchido e não pode conter caracteres inválidos.
+            O Telefone deve ser preenchido com um número de telefone válido.
+            O Tipo de Endereço deve ser selecionado a partir de uma lista de opções.
+            Cada usuário só pode ter um endereço padrão para entrega.
+
+    Configurações da conta: Representa as configurações da conta do usuário, como endereço, telefone, etc.
+        atributos:
+            ID do Usuário: o identificador do usuário ao qual as configurações da conta estão vinculadas.
+            Nome: o nome do usuário exibido em sua conta.
+            Endereço de E-mail: o endereço de e-mail do usuário, usado para fazer login e receber notificações.
+            Senha: a senha criptografada do usuário.
+            Configurações de Notificação: as configurações de notificação do usuário, incluindo quais tipos de notificações deseja receber.
+            Configurações de Privacidade: as configurações de privacidade do usuário, incluindo o compartilhamento de informações com terceiros.
+        regras de negocio:
+            O ID do Usuário deve estar vinculado a um usuário válido.
+            O Nome deve ser preenchido e não pode conter caracteres inválidos.
+            O Endereço de E-mail deve ser preenchido com um endereço de e-mail válido e não pode já estar sendo usado por outro usuário.
+            A Senha deve ser criptografada e segura, com uma política de senhas robusta em vigor.
+            As Configurações de Notificação devem ser selecionadas a partir de uma lista de opções.
+            As Configurações de Privacidade devem ser selecionadas a partir de uma lista de opções, incluindo opções para o compartilhamento de informações com terceiros.
+    Notificação: Representa uma notificação enviada ao usuário, como atualizações de pedido ou pagamento.
+        atributos:
+            ID da notificação: Um identificador único para cada notificação enviada.
+
+            Tipo de notificação: O tipo de notificação, como nova venda, atualização de estoque, etc.
+
+            Destinatário: O destinatário da notificação, como o comprador ou o vendedor.
+
+            Conteúdo da mensagem: O conteúdo da mensagem da notificação.
+
+            Data e hora de envio: A data e hora em que a notificação foi enviada.
+
+            Lido/não lido: Indica se a notificação foi lida ou não pelo destinatário.
+
+            Anexo: Um anexo opcional, como uma imagem ou arquivo, pode ser incluído na notificação.
+
+        regras de negocio:
+
+            ID da notificação: Deve ser único para cada notificação e gerado automaticamente pelo sistema.
+
+            Tipo de notificação: O sistema deve permitir a configuração de vários tipos de notificações, como nova venda, atualização de estoque, etc.
+
+            Destinatário: A notificação deve ser enviada ao destinatário correto, de acordo com o tipo de notificação.
+
+            Conteúdo da mensagem: O conteúdo da mensagem deve ser claro e preciso, e pode ser personalizado de acordo com o tipo de notificação.
+
+            Data e hora de envio: A data e hora de envio da notificação devem ser registradas automaticamente pelo sistema.
+
+            Lido/não lido: O sistema deve marcar automaticamente a notificação como "lida" quando o destinatário a visualizar.
+
+            Anexo: O sistema deve permitir o envio de anexos opcionais na notificação, mas esses anexos devem ser verificados para garantir a segurança do sistema e dos dados dos usuários.
+            
+            Perfil: Representa o perfil do usuário, exibindo suas informações e atividades.
+
+
+    Favoritos: Representa a lista de produtos favoritos do comprador.
+        atributos:
+            iD do usuário: Deve ser o identificador único do usuário que adicionou o produto aos seus favoritos.
+
+            ID do produto: Deve ser o identificador único do produto adicionado aos favoritos.
+
+            Data de adição: Deve ser a data em que o usuário adicionou o produto aos seus favoritos.
+        regras de negocio:
+            Verificação de autenticação: O usuário deve estar autenticado para adicionar produtos aos seus favoritos.
+
+            Produto disponível: Somente produtos disponíveis no estoque podem ser adicionados aos favoritos.
+
+            Limite de produtos: O sistema deve permitir que o usuário adicione um número limitado de produtos aos seus favoritos.
+
+            Produto já adicionado: O sistema deve impedir que o usuário adicione o mesmo produto duas vezes aos seus favoritos.
+
+            Atualização automática: O sistema deve atualizar automaticamente a lista de favoritos do usuário se o produto for excluído ou descontinuado.
+
+            Acesso restrito: A lista de favoritos do usuário deve ser privada e somente o próprio usuário deve ter acesso a ela.
+
+    Histórico de compras: Representa o histórico de compras do comprador.
+        atributos:
+            ID do histórico de compra: um identificador único para cada histórico de compra.
+
+            ID do usuário: o identificador do usuário que fez a compra.
+
+            ID do produto: o identificador do produto que foi comprado.
+
+            Quantidade: a quantidade de itens do produto que foram comprados.
+
+            Data da compra: a data e hora em que a compra foi realizada.
+
+            Valor total: o valor total da compra, incluindo impostos e outras taxas.
+
+            Forma de pagamento: a forma de pagamento utilizada para a compra.
+        regras de negocio:
+
+            ID do histórico de compra: deve ser único para cada histórico de compra.
+
+            ID do usuário: deve ser válido e corresponder ao ID de um usuário existente no sistema.
+
+            ID do produto: deve ser válido e corresponder ao ID de um produto existente no sistema.
+
+            Quantidade: deve ser um número inteiro positivo e não pode ser maior do que a quantidade disponível do produto no estoque.
+
+            Data da compra: deve ser preenchida automaticamente com a data e hora da realização da compra.
+
+            Valor total: deve ser calculado automaticamente com base na quantidade de itens comprados, preço do produto e outras taxas.
+
+            Forma de pagamento: deve ser uma das formas de pagamento aceitas pelo sistema e deve ser válida para a data da compra.
+
+    Fornecedor: Representa o fornecedor de produtos para o marketplace.
+        atributos:
+            ID do fornecedor: um identificador único para o fornecedor, usado para recuperar informações do fornecedor em todo o sistema.
+
+            Nome da empresa: o nome completo da empresa do fornecedor.
+
+            Endereço de contato: o endereço de contato do fornecedor, incluindo rua, cidade, estado e país.
+
+            Número de telefone: o número de telefone do fornecedor, usado para contato com o fornecedor.
+
+            Endereço de e-mail: o endereço de e-mail do fornecedor, usado para contato com o fornecedor.
+
+            Categoria de produtos: a categoria de produtos que o fornecedor está autorizado a fornecer.
+
+            Status de aprovação: o status de aprovação do fornecedor, indicando se o fornecedor foi aprovado ou não pelo marketplace.
+        regras de negocio:
+
+            ID do fornecedor: este atributo deve ser gerado automaticamente pelo sistema e não pode ser alterado.
+
+            Nome da empresa: este atributo deve ser preenchido corretamente pelo fornecedor durante o processo de registro e não pode conter caracteres especiais ou informações irrelevantes.
+
+            Endereço de contato: este atributo deve ser preenchido corretamente pelo fornecedor durante o processo de registro e deve incluir um endereço válido.
+
+            Número de telefone: este atributo deve ser preenchido corretamente pelo fornecedor durante o processo de registro e deve incluir um número de telefone válido.
+
+            Endereço de e-mail: este atributo deve ser preenchido corretamente pelo fornecedor durante o processo de registro e deve incluir um endereço de e-mail válido.
+
+            Categoria de produtos: este atributo deve ser selecionado pelo fornecedor durante o processo de registro e deve ser compatível com a categoria de produtos aprovada pelo marketplace.
+
+            Status de aprovação: este atributo é atualizado pelo sistema de acordo com a avaliação da equipe do marketplace e indica se o fornecedor foi aprovado ou não para vender produtos no marketplace.
+    Comissão: Representa a comissão cobrada pelo marketplace para cada venda.
+        atributos:
+            Valor da comissão: quantidade de dinheiro que será cobrada pelo marketplace ao fornecedor como uma taxa de serviço pelas vendas realizadas.
+            Data da cobrança: data em que a comissão será cobrada do fornecedor.
+            Taxa fixa ou percentual: forma como a comissão será cobrada, se como uma quantidade fixa ou como uma porcentagem do valor da venda.
+            Produtos associados: lista de produtos associados à comissão, para que seja possível calcular o valor da comissão.
+        regras de negocio:
+            Valor da comissão: O valor da comissão deve ser claramente definido e combinado entre o fornecedor e o marketplace antes da venda ser realizada.
+            Data da cobrança: A data da cobrança deve ser definida de acordo com as políticas do marketplace e combinada com o fornecedor antes da venda ser realizada.
+            Taxa fixa ou percentual: A forma de cobrança deve ser clara e combinada com o fornecedor antes da venda ser realizada.
+            Produtos associados: A lista de produtos associados à comissão deve ser mantida atualizada e correta para que o valor da comissão seja calculado corretamente.
+
+    Recomendações: Representa as recomendações de produtos para o comprador.
+        atributos:
+
+        regras de negocio:
+    Campanha publicitária: Representa a campanha publicitária criada pelo vendedor para promover seus produtos.
+        atributos:
+
+        regras de negocio:
+    Status do pedido: Representa o status atual do pedido, como "em processamento", "enviado", etc.
+        atributos:
+
+        regras de negocio:
+
+    Integração de método de pagamento: Representa a integração do método de pagamento escolhido pelo comprador.
+        atributos:
+
+        regras de negocio:
+
+    Integração de envio: Representa a integração do serviço de envio escolhido pelo vendedor.
+        atributos:
+
+        regras de negocio:
+    Gerenciamento de estoque: Representa a gestão da quantidade disponível de cada produto pelo vendedor.
+        atributos:
+
+        regras de negocio:
+    Gerenciamento de vendas: Representa a gestão de todas as vendas pelo vendedor.
+        atributos:
+
+        regras de negocio:
+    Oferta: Representa um preço promocional ou desconto oferecido em um produto.
+        atributos:
+
+        regras de negocio:
+    Promoção: Representa uma campanha promocional do marketplace, como cupons de desconto ou ofertas.
+        atributos:
+
+        regras de negocio:
+    Anúncio: Representa um anúncio de um produto ou vendedor no marketplace.
+        atributos:
+
+        regras de negocio:
+    Página de produto: Representa a página de detalhes de um produto no marketplace.
+        atributos:
+
+        regras de negocio:
+    Filtro: Representa as opções de filtragem disponíveis na busca de produtos.
+        atributos:
+
+        regras de negocio:
+    Busca: Representa a busca de produtos pelo comprador.
+        atributos:
+
+        regras de negocio:
+    Comentário: Representa um comentário feito pelo comprador ou vendedor sobre um produto ou venda.
+        atributos:
+
+        regras de negocio:
+    Resposta: Representa a resposta de um vendedor a um comentário ou pergunta de um comprador.
+        atributos:
+
+        regras de negocio:
+    Pergunta: Representa uma pergunta feita pelo comprador ao vendedor sobre um produto.
+        atributos:
+
+        regras de negocio:
+    Dashboard: Representa a página inicial do administrador do marketplace, exibindo informações relevantes.
+        atributos:
+
+        regras de negocio:
+    Integração: Representa a integração de outros sistemas com o marketplace, como sistemas de pagamento ou de envio.
+        atributos:
+
+        regras de negocio:
+    Autenticação: Representa o processo de verificação da identidade do usuário.
+        atributos:
+
+        regras de negocio:
+    Segurança: Representa as medidas de segurança adotadas pelo marketplace, como criptografia, autenticação, etc.
+        atributos:
+
+        regras de negocio:
