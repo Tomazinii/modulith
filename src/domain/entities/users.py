@@ -17,3 +17,7 @@ class Users:
             return is_remove
 
         raise Exception("You need to pass your password and id")
+
+
+    def __repr__(self) -> str:
+        return f"User(name:{self.name}, id:{self.id})"
