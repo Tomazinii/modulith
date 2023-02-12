@@ -2,7 +2,7 @@
 from src.infra.interface.repo_interface import UserRepositoryInterface
 from src.domain.entities import Users
 from faker import Faker
-
+from typing import Dict, List
 faker = Faker()
 
 class FakerUserRepository(UserRepositoryInterface):
@@ -22,5 +22,11 @@ class FakerUserRepository(UserRepositoryInterface):
             raise Exception("Error")
 
         return None
+
+    def select_user(self, name: str = None, user_id: int = None) -> List[Users]:
+        return super().select_user(name, user_id)
+
+    def update_user(self, id: int, data: Dict) -> Users:
+        return True
 
         
