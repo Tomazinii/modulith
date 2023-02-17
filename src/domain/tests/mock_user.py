@@ -12,7 +12,6 @@ def mock_user() -> Users:
         id = faker.random_number(),
         name = faker.name(),
         email = faker.email(),
-        password = faker.name(),
         date_of_birth = faker.date(),
         phone = faker.phone_number()
     )
