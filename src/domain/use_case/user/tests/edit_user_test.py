@@ -1,10 +1,12 @@
 from src.domain.entities import Users
 from faker import Faker
-from .edit_user import EditUser
-
+from ..edit_user import EditUser
+import pytest
 from src.infra.repo.faker import  FakerUserRepository
 
 faker = Faker()
+
+pytestmark = pytest.mark.unit
 
 def test_edit_user():
     repository = FakerUserRepository()

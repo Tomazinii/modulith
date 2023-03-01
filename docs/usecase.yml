@@ -1,11 +1,11 @@
      Usuário:
 
-        Cadastrar novo usuário no marketplace
-        Editar informações do perfil do usuário
+        #Cadastrar novo usuário no marketplace
+        #Editar informações do perfil do usuário
         Visualizar histórico de compras
         Adicionar produtos à lista de favoritos ou desejos
         Receber notificações de atualizações de pedidos ou pagamentos
-        Realizar login
+    -   Realizar login 
 
     Produto:
 

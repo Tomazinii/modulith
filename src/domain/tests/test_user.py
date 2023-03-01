@@ -6,11 +6,11 @@ faker = Faker()
 
 def test_remove_user():
     user_mock = mock_user()
-    user_mock.set_password(faker.name())
-    remove_status = user_mock.delete_account(user_mock.id,password=user_mock.get_password(user_mock.id))
+
+    remove_status = user_mock.delete_account(user_mock.id,password=user_mock.password)
 
 
-    assert user_mock.get_password(user_mock.id) != None
+    assert user_mock.password!= None
     assert remove_status == True
 
 

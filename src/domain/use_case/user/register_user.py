@@ -30,6 +30,8 @@ class RegisterUser(RegisterUserInterface):
         verify_user = self.verify_if_user_is_register_email(email=email)
 
         if validate_type and verify_user:
-            response = self.user_repository.insert_user(name=name, password=password,email=email,phone=phone,date_of_birth=date_of_birth)
+            response = self.user_repository.insert_user(name=name, password=password, email=email,phone=phone,date_of_birth=date_of_birth)
             return {"success": validate_type, "data": response}
         return {"success": False, "data": response}
+
+

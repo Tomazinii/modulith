@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from src.domain.entities import Users
 from typing import Type, Dict, List
 
+
+
 class UserRepositoryInterface(ABC):
     """ repository interface """
 
