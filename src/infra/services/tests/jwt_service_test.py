@@ -53,4 +53,30 @@ class TestJwtService:
         with pytest.raises(Exception, match="token invalid or expired"):
             service.refresh_token(refresh_token=refresh_token, key=key)
 
+    def test_verify_sucess(self):
+        key = secrets.token_hex(10)
 
+        user = mock_user()
+        payload = vars(user)
+        payload["exp"] = datetime.datetime.utcnow() + datetime.timedelta(days=1)
+        
+        token = jwt.encode(payload=payload,key=key,algorithm="HS256")
+        service = JwtService()
+
+        result = service.verify_token(token,key=key)
+        assert result is True
+
+    def test_verify_fail(self):
+
+        key = secrets.token_hex(10)
+
+        user = mock_user()
+        payload = vars(user)
+        payload["exp"] = datetime.datetime.utcnow() 
+        
+        token = jwt.encode(payload=payload,key=key,algorithm="HS256")
+        service = JwtService()
+
+        with pytest.raises(Exception, match="token invalid or expired"):
+            service.verify_token(token,key=key)
+            

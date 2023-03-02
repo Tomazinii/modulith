@@ -1,3 +1,4 @@
+import re
 from typing import Dict
 from src.domain.services.interface import JwtServiceInterface
 from src.domain.entities import Users
@@ -35,5 +36,11 @@ class JwtService(JwtServiceInterface):
 
 
     
-    def verify_token(self):
-        return super().verify_token()
+    def verify_token(self, token, algorithm = "HS256",key=settings.SIGNING_KEY) -> bool:
+        """ this method verify if token is valid """
+        try:
+            jwt.decode(token,algorithms=[algorithm], key=key)
+            return True
+
+        except:
+            raise Exception("token invalid or expired")
