@@ -8,10 +8,10 @@ from typing import Type, Dict
 class Authentication(AuthenticationUserInterface):
     """ authentication login/logout """
 
-    def __init__(self, repository: Type[UserRepositoryInterface],  hash_service: Type[HashPasswordService] , jwt_servive: Type[JwtServiceInterface] = None):
+    def __init__(self, repository: Type[UserRepositoryInterface],  hash_service: Type[HashPasswordService] , jwt_service: Type[JwtServiceInterface]):
         self.repository = repository
         self.hash_service = hash_service
-        self.jwt_servive = jwt_servive
+        self.jwt_service = jwt_service
 
 
     def login(self, email: str, password: str) -> Dict[str, str]:
@@ -23,9 +23,10 @@ class Authentication(AuthenticationUserInterface):
 
         if self.hash_service.verify_password(password=password, pwd=user.password):
             user.is_authenticate = True
-            # self.jwt_servive.create_token(user=user)
+            
+            token = self.jwt_service.create_token(user=user)
 
-            return "Token"
+            return token
         
         else:
             raise Exception("Email or password incorrect")

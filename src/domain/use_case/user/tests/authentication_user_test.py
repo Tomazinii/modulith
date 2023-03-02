@@ -1,3 +1,4 @@
+import jwt
 from ..authentication import Authentication
 from src.infra.repo.faker import FakerUserRepository
 import pytest
@@ -8,6 +9,9 @@ from src.domain.services.interface import HashPasswordService
 from src.domain.entities import Users
 from src.infra.services import HashPassword
 from src.domain.services.interface import JwtServiceInterface
+from src.infra.services import JwtService
+
+from src.domain.tests import mock_user
 
 from typing import Dict
 
@@ -33,14 +37,25 @@ class TestAuthentication:
     def mock_user_repo(self):
         return Mock(spec=UserRepositoryInterface)
     
+    def authenticate(self,repository, hash_service,jwt_service = JwtService):
+        return Authentication(repository,hash_service,jwt_service)
+
+    
 
     def test_login_user(self,hash_service,mock_user_repo):
-        authentication = Authentication(repository=mock_user_repo, hash_service=hash_service)
-        data: Dict = {"access":"token", "refresh":"refresh_token"}
+        user_repository = mock_user_repo
 
-        exec = authentication.login(email=faker.email(),password="test")
+        user_repository.select_user.return_value = mock_user()
 
-        assert exec == "Token"
+
+        authentication = self.authenticate(repository=user_repository, hash_service=hash_service,jwt_service=JwtService)
+
+        tokens = authentication.login(email=faker.email(),password="test")
+
+        assert isinstance(tokens, dict)
+        assert "access" in tokens 
+        assert "refresh" in tokens 
+
 
 
 
@@ -51,7 +66,7 @@ class TestAuthentication:
         user_repository = mock_user_repo
         user_repository.select_user.return_value = []
 
-        authentication = Authentication(repository=user_repository, hash_service=hash_service)
+        authentication = self.authenticate(repository=user_repository, hash_service=hash_service)
         
 
         # Act/Assert
@@ -64,7 +79,7 @@ class TestAuthentication:
         password = "password"
 
         hash_service.verify_password.return_value = False
-        authentication = Authentication(repository=mock_user_repo, hash_service=hash_service)
+        authentication = self.authenticate(repository=mock_user_repo, hash_service=hash_service)
 
         with pytest.raises(Exception, match="Email or password incorrect"):
             authentication.login(email, password)

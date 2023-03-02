@@ -8,7 +8,8 @@ import settings
 
 class JwtService(JwtServiceInterface):
     
-    def create_token(self, user: Users, key = settings.SIGNING_KEY, algorithm = "HS256",life_time_access_token = settings.ACCESS_TOKEN_EXPIRATION,life_time_refresh_token = settings.REFRESH_TOKEN_EXPIRATION) -> Dict[str, str]:
+    @staticmethod
+    def create_token(user: Users, key = settings.SIGNING_KEY, algorithm = "HS256",life_time_access_token = settings.ACCESS_TOKEN_EXPIRATION,life_time_refresh_token = settings.REFRESH_TOKEN_EXPIRATION) -> Dict[str, str]:
         """ this method create token to user in dict format -> {token, refresh_token} """
 
         access_payload = vars(user)
@@ -21,6 +22,8 @@ class JwtService(JwtServiceInterface):
         refresh_token = jwt.encode(payload=refresh_payload, key=key, algorithm=algorithm)
         return {"access":access_token, "refresh":refresh_token}
     
+
+    
     def refresh_token(self, refresh_token, key = settings.SIGNING_KEY,algorithm = "HS256", life_time_access_token = settings.ACCESS_TOKEN_EXPIRATION) -> str:
         """ this method create new_token from the refresh_token """
 
@@ -32,6 +35,7 @@ class JwtService(JwtServiceInterface):
 
         except:
             raise Exception("token invalid or expired")
+        
 
 
 
@@ -40,7 +44,7 @@ class JwtService(JwtServiceInterface):
         """ this method verify if token is valid """
         try:
             jwt.decode(token,algorithms=[algorithm], key=key)
-            return True
 
+            return True
         except:
             raise Exception("token invalid or expired")

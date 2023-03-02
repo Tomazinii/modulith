@@ -5,7 +5,7 @@ class AuthenticationUserInterface(ABC):
     """ login interface method """
 
     @abstractmethod
-    def login(self, email, password) -> Dict[str, str]:
+    def login(self, email, password) -> Dict[str,str]:
         raise Exception("not implemented")
 
     @abstractmethod
