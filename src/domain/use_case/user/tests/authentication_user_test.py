@@ -39,7 +39,6 @@ class TestAuthentication:
     
     def authenticate(self,repository, hash_service,jwt_service = JwtService):
         return Authentication(repository,hash_service,jwt_service)
-
     
 
     def test_login_user(self,hash_service,mock_user_repo):
@@ -55,7 +54,6 @@ class TestAuthentication:
         assert isinstance(tokens, dict)
         assert "access" in tokens 
         assert "refresh" in tokens 
-
 
 
 

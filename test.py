@@ -1,37 +1,20 @@
-import datetime
-import time
-import jwt
-
-import secrets
 
 
 
-
-key = secrets.token_hex(50)
-
-
-class User:
-    def __init__(self,nome) -> None:
-        self.nome = nome
-
-
-
-payload = {
-    "exp": datetime.datetime.utcnow(),
-    "user":"alecrin",
-    "user":"alecrin",
-}
-
-
-encoded = jwt.encode(payload, key, algorithm="HS256")
-
-
-
-decoded = jwt.decode(encoded, key, algorithms=['HS256'])
-
-print(decoded)
+class MeuErro(BaseException):
+    def __init__(self, message,*args: object) -> None:
+        self.message = message
+        super().__init__(*args)
+    
+    def message(self):
+        return self.message
 
 
 
 
+try:
+    # Se a operação não levantou o erro, levantamos o nosso erro personalizado
+    raise MeuErro("Ocorreu um erro personalizado!")
 
+except MeuErro as erro:
+    print(f"Erro personalizadosssssssssssss: {erro.message}")
