@@ -44,12 +44,13 @@ class TestAuthentication:
     def test_login_user(self,hash_service,mock_user_repo):
         user_repository = mock_user_repo
 
-        user_repository.select_user.return_value = mock_user()
+        user_repository.select_user.return_value = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf".encode())
+
 
 
         authentication = self.authenticate(repository=user_repository, hash_service=hash_service,jwt_service=JwtService)
 
-        tokens = authentication.login(email=faker.email(),password="test")
+        tokens = authentication.login(email=faker.email(),password=b"test")
 
         assert isinstance(tokens, dict)
         assert "access" in tokens 

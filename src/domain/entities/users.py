@@ -24,6 +24,6 @@ class Users:
 
 
     def __repr__(self) -> str:
-        return f"User(name:{self.name}, id:{self.id})"
+        return f"User(name:{self.name}, id:{self.id}, password:{self.password})"
 
 

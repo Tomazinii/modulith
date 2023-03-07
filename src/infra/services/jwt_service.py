@@ -13,11 +13,11 @@ class JwtService(JwtServiceInterface):
         """ this method create token to user in dict format -> {token, refresh_token} """
 
         access_payload = vars(user)
+        access_payload["password"] = user.password.decode() # resolba esse problema
         access_payload["exp"] = life_time_access_token
 
         refresh_payload = vars(user)
         refresh_payload = {"exp": life_time_refresh_token}
-
         access_token = jwt.encode(payload=access_payload, key=key,algorithm=algorithm)
         refresh_token = jwt.encode(payload=refresh_payload, key=key, algorithm=algorithm)
         return {"access":access_token, "refresh":refresh_token}

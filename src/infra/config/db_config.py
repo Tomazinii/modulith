@@ -1,21 +1,35 @@
-from configparser import ConfigParser
+import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
-def config(filename="database.ini", section="postgresql"):
+conn = psycopg2.connect(
+    host="localhost",
+    database="ecommerce",
+    user="postgres",
+    password="123"
+)
 
-    parser = ConfigParser()
+
+class DBConnectionHandler:
+
+    def __init__(self) -> None:
+        self.__connection_string = "postgresql://postgres:123@localhost:5432/ecommerce"
+        self.session = None
+
+    def get_engine(self):
+
+        engine = create_engine(self.__connection_string)
+
+        return engine
     
-    parser.read(filenames=filename)
+    def __enter__(self):
+        engine = create_engine(self.__connection_string)
+        session_maker = sessionmaker(bind=engine)
+        self.session = session_maker()
+        return self
 
-    db = {}
 
-    if parser.has_section(section):
-        params = parser.items(section)
-        
-        for param in params:
-            db[param[0]] = param[1]
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close() 
 
-    else:
-        raise Exception("Section error")
-
-    return db

@@ -13,9 +13,7 @@ class Authentication(AuthenticationUserInterface):
         self.hash_service = hash_service
         self.jwt_service = jwt_service
 
-
     def login(self, email: str, password: str) -> Dict[str, str]:
-
         user: Users = self.repository.select_user(email=email)
 
         if not user:
@@ -23,9 +21,7 @@ class Authentication(AuthenticationUserInterface):
 
         if self.hash_service.verify_password(password=password, pwd=user.password):
             user.is_authenticate = True
-            
             token = self.jwt_service.create_token(user=user)
-
             return token
         
         else:

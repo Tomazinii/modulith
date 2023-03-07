@@ -8,13 +8,18 @@ import pytest
 import secrets
 from src.domain.tests import mock_user
 import settings
+from unittest.mock import Mock
+
+from src.domain.entities import Users
+
 pytestmark = pytest.mark.unit
 
 
 class TestJwtService:
 
     def test_create_jwt(self):
-        user = mock_user()
+        user = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf")
+        user.password = b"password"
         service = JwtService()
         result = service.create_token(user=user)
         assert result["access"]

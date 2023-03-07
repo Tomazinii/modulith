@@ -1,17 +1,4 @@
-import psycopg2
-from .db_config import config
+from sqlalchemy.ext.declarative import declarative_base
 
-def connect():
-    """ connect to the postgresql database server """
+Base = declarative_base()
 
-    conn = None
-
-    # try:
-
-    #     params = config()
-
-    #     conn = psycopg2.connect(**params)
-
-    #     cur = conn.cursor()
-
-    #     cur.execute("SELECT version()")

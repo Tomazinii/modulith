@@ -11,7 +11,6 @@ class EditUser(EditUserInterface):
         
     
     def edit_user(self, id: int, name: str = None, email: str = None, phone: str = None, date_of_birth: str = None) -> Dict[bool, Users]:
-
         data = {}
         response = None
 

@@ -1,20 +1,20 @@
 
 
-
-class MeuErro(BaseException):
-    def __init__(self, message,*args: object) -> None:
-        self.message = message
-        super().__init__(*args)
+class Test:
     
-    def message(self):
-        return self.message
+    def __init__(self) -> None:
+        self.session = None
+
+    
+    def __enter__(self):
+        self.session = "session_maker()"
+        return self
 
 
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("SAIu")
 
 
-try:
-    # Se a operação não levantou o erro, levantamos o nosso erro personalizado
-    raise MeuErro("Ocorreu um erro personalizado!")
+with Test() as z:
+    print(z.session)
 
-except MeuErro as erro:
-    print(f"Erro personalizadosssssssssssss: {erro.message}")
