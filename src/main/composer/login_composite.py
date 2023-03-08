@@ -3,6 +3,7 @@ import jwt
 from src.presenters.controllers.user_controller import LoginController
 from src.domain.use_case.user import Authentication
 from src.infra.services import JwtService, HashPassword
+from src.infra.repo.user_repository import UserRepository #put in the module init
 
 
 #only test

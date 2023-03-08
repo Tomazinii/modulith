@@ -17,10 +17,12 @@ class DBConnectionHandler:
         self.__connection_string = "postgresql://postgres:123@localhost:5432/ecommerce"
         self.session = None
 
+    def get_db(self):
+        return conn
+
+
     def get_engine(self):
-
         engine = create_engine(self.__connection_string)
-
         return engine
     
     def __enter__(self):

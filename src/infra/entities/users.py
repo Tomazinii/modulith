@@ -1,8 +1,9 @@
 from sqlalchemy import Column, Integer, String, Boolean
 
-from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
+# Base = declarative_base()
+from src.infra.config.db_base import Base
 
 
 class Users(Base):

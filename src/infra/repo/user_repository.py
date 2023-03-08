@@ -26,7 +26,8 @@ class UserRepository(UserRepositoryInterface):
 
     
     @classmethod
-    def select_user(self, email: str = None, user_id: int = None) -> List[Users]:
+    def select_user(cls, email: str = None, user_id: int = None) -> List[Users]:
+
         return super().select_user(email, user_id)
     
     @classmethod
