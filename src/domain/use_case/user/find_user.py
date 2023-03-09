@@ -14,19 +14,22 @@ class FindUser(FindUserInterface):
         """ select user by email field """
         
         if isinstance(email, str):
-            user = self.repository.select_user(email=email)
-            return user
+            if self.repository.select_user(email=email):
+                user = self.repository.select_user(email=email)
+                return user
+            return Exception("User not found")
         
         raise Exception("invalid type input")
-
 
 
     def by_id(self, user_id):
         """ select user by id field """
         
         if isinstance(user_id, int):
-            user = self.repository.select_user(user_id=id)
-            return user
+            if self.repository.select_user(user_id=user_id):
+                user = self.repository.select_user(user_id=user_id)
+                return user
+            raise Exception("User not found")
         
         raise Exception("invalid type input")
 
