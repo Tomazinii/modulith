@@ -1,20 +1,9 @@
+import bcrypt
 
 
-class Test:
-    
-    def __init__(self) -> None:
-        self.session = None
+gen = bcrypt.gensalt()
+hash = bcrypt.hashpw(password=b"password", salt=gen)
 
-    
-    def __enter__(self):
-        self.session = "session_maker()"
-        return self
+w = bcrypt.checkpw(b"123",hash)
 
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        print("SAIu")
-
-
-with Test() as z:
-    print(z.session)
-
+print(hash)

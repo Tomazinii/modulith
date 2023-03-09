@@ -15,7 +15,6 @@ class RegisterUserController(RouteInterface):
 
         response = None
 
-
         if http_request.body:
             body_params = http_request.body.keys()
 
@@ -26,13 +25,15 @@ class RegisterUserController(RouteInterface):
                 name = http_request.body["name"]
                 date_of_birth = http_request.body["date_of_birth"]
                 response = self.register_usecase.register(email=email, password=password, phone=phone, name=name, date_of_birth=date_of_birth)
-
+  
+                response_data = vars(response["data"]) # isso nao deve ser feito aqui!
             else:
                 http_error = HttpErrors.error_422()
                 return HttpResponse(http_error["status_code"], http_error["body"])
 
-            return HttpResponse(200, response["data"])
+            return HttpResponse(200, response_data)
 
         http_error = HttpErrors.error_400()
+
         return HttpResponse(http_error["status_code"], http_error["body"])
         

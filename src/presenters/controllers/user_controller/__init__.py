@@ -1,1 +1,2 @@
 from .login_controller import LoginController
+from .register_user import RegisterUserController

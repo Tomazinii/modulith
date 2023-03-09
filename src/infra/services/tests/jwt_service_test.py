@@ -19,6 +19,7 @@ class TestJwtService:
 
     def test_create_jwt(self):
         user = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf")
+        user._sa_instance_state ="asdf"
         user.password = b"password"
         service = JwtService()
         result = service.create_token(user=user)

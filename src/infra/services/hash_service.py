@@ -22,6 +22,9 @@ class HashPassword(HashPasswordService):
         if type(password) is not bytes:
             password = HashPassword.validate_encode(password)
 
+        if type(pwd) is not bytes:
+            pwd = HashPassword.validate_encode(pwd)
+
         if bcrypt.checkpw(password=password, hashed_password=pwd):
             return True
         

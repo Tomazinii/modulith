@@ -43,8 +43,10 @@ class TestAuthentication:
 
     def test_login_user(self,hash_service,mock_user_repo):
         user_repository = mock_user_repo
+        user = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf".encode())
+        user._sa_instance_state = ""
 
-        user_repository.select_user.return_value = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf".encode())
+        user_repository.select_user.return_value = [user]
 
 
 
@@ -69,15 +71,18 @@ class TestAuthentication:
         
 
         # Act/Assert
-        with pytest.raises(Exception, match="user not found"):
+        with pytest.raises(Exception, match="User not found"):
             authentication.login(email, password)
 
     
     def test_user_email_or_password_incorrect(self, hash_service, mock_user_repo):
         email = "johndoe@example.com"
         password = "password"
-
         hash_service.verify_password.return_value = False
+        user = Users(2,"alecrin",email="a@a.com",date_of_birth="2-2-1000",phone="12345",password="qwerf".encode())
+        user._sa_instance_state = ""
+
+        mock_user_repo.select_user.return_value = [user]
         authentication = self.authenticate(repository=mock_user_repo, hash_service=hash_service)
 
         with pytest.raises(Exception, match="Email or password incorrect"):

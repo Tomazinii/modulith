@@ -4,6 +4,11 @@ from src.infra.config.db_config import DBConnectionHandler
 import pytest
 from faker import Faker
 from psycopg2.extras import DictCursor
+from unittest.mock import Mock
+from random import randint
+from src.infra.entities import Users
+
+
 faker = Faker()
 
 pytestmark = pytest.mark.unit
@@ -30,3 +35,32 @@ class TestUserRepository:
         
         assert user.id == query["id"]
         assert user.name == query["name"]
+
+    
+    def test_select_user_email(self):
+        #Arrange
+        db_connection = DBConnectionHandler()
+        user = Users(name=faker.name(), email=faker.email(), password=faker.name(), phone=faker.name(), date_of_birth="00-00-00")
+        with db_connection:
+            db_connection.session.add(user)
+            db_connection.session.commit()
+
+        #Act
+            result = self.repo.select_user(user.email)
+
+                    
+        #Assert
+        assert result[0].email == user.email
+        assert result[0].id == user.id
+
+        def delete_user():
+            user_to_delete = db_connection.session.query(Users).filter_by(email=user.email).first()
+            db_connection.session.delete(user_to_delete)
+            db_connection.session.commit()
+        delete_user()
+
+
+
+
+
+ 

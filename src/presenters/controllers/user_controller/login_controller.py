@@ -25,6 +25,7 @@ class LoginController(RouteInterface):
                 response = self.authentication_use_case.login(
                     email=email, password=password
                 )
+
             
             else:
                 http_error = HttpErrors.error_422()

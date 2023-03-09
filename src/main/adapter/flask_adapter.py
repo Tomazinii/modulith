@@ -3,7 +3,6 @@ from typing import Type
 from src.presenters.helpers import HttpRequest,HttpResponse
 
 
-
 def flask_adapter(request: any, api_route: Type[RouteInterface]):
     try:
         http_request = HttpRequest(body=request.json)

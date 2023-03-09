@@ -2,6 +2,7 @@ from src.domain.use_case_interface.user import AuthenticationUserInterface
 from src.infra.interface.repo_interface import UserRepositoryInterface
 from src.domain.services.interface import HashPasswordService,JwtServiceInterface
 from src.domain.entities import Users
+from src.domain.use_case.exceptions import UserNotFoundException,InvalidCredentialsException
 
 from typing import Type, Dict
 
@@ -17,15 +18,17 @@ class Authentication(AuthenticationUserInterface):
         user: Users = self.repository.select_user(email=email)
 
         if not user:
-            raise Exception("user not found")
+            raise UserNotFoundException()
+        
 
-        if self.hash_service.verify_password(password=password, pwd=user.password):
-            user.is_authenticate = True
-            token = self.jwt_service.create_token(user=user)
+        if self.hash_service.verify_password(password=password, pwd=user[0].password): # isso vai dar erro pq o user é uma lista
+            user[0].is_authenticate = True # nao faz muito sendo se isso nao mudar dentro do banco de dados
+            token = self.jwt_service.create_token(user=user[0])
+            
             return token
         
         else:
-            raise Exception("Email or password incorrect")
+            raise InvalidCredentialsException()
 
 
 
