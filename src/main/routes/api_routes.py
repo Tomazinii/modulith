@@ -6,7 +6,7 @@ from src.main.composer import login_user_compose,register_composite
 api_routes_bp = Blueprint("api_routes",__name__)
 
 
-@api_routes_bp.route("/api/jwt/create/",methods=["POST","GET"])
+@api_routes_bp.route("/api/jwt/create/",methods=["POST"])
 def login():
 
     message = {}
@@ -31,3 +31,8 @@ def register():
         "error": response.body,
         }
     ), response.status_code
+
+
+@api_routes_bp.route("/api/auth/me/",methods= ["PATCH","GET"])
+def me():
+    return jsonify({"teste":"asdf"})
