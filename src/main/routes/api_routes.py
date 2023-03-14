@@ -39,3 +39,4 @@ def me():
         return jsonify({"user":response.body})
 
     return jsonify({"erro":response.body}), response.status_code
+    

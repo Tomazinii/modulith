@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 conn = psycopg2.connect(
-    host="localhost",
+    host="dbpostgres",
     database="ecommerce",
     user="postgres",
     password="123"
@@ -14,7 +14,7 @@ conn = psycopg2.connect(
 class DBConnectionHandler:
 
     def __init__(self) -> None:
-        self.__connection_string = "postgresql://postgres:123@localhost:5432/ecommerce"
+        self.__connection_string = "postgresql://postgres:123@dbpostgres:5432/ecommerce"
         self.session = None
 
     def get_db(self):
