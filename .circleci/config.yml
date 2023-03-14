@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
@@ -45,3 +46,14 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
+=======
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: python:3.9-slim-buster
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: pytest
+>>>>>>> 3c4a8771c707936f7a81acb0c605ba15353bc6f4
