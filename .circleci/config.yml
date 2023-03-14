@@ -1,0 +1,9 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: python:3.9-slim-buster
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: pytest
