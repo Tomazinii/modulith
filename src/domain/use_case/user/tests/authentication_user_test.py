@@ -1,6 +1,4 @@
-import jwt
 from ..authentication import Authentication
-from src.infra.repo.faker import FakerUserRepository
 import pytest
 from faker import Faker
 from src.infra.interface.repo_interface import UserRepositoryInterface
