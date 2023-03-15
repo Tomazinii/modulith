@@ -1,38 +1,30 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/python:3.9.0
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: pip install -r requirements.txt
-  test:
-    docker:
-      - image: circleci/python:3.9.0
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: pip install -r requirements.txt
-      - run: pytest
   deploy:
+    working_directory: ~/app
     docker:
-      - image: circleci/aws-cli:latest
+      - image: circleci/ruby:2.4.3
     steps:
       - checkout
-      - run: |
-          aws configure set aws_access_key_id AKIA5XODLY3JH2VOKYXD
-          aws configure set aws_secret_access_key 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
-      - run: |
-          aws elasticbeanstalk create-application-version --application-name my-application --version-label $CIRCLE_SHA1 --source-bundle S3Bucket=my-bucket,S3Key=my-application/$CIRCLE_SHA1.zip
-          aws elasticbeanstalk update-environment --environment-name my-environment --version-label $CIRCLE_SHA1
+
+      - run:
+          name: Installing deployment dependencies
+          working_directory: /
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get install python3-pip python3-dev build-essential
+            sudo pip3 install awsebcli
+
+      - run:
+          name: Deploying
+          command: eb deploy Monolith-env
+
 workflows:
-  build-test-deploy:
+  version: 2
+  build:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
       - deploy:
-          requires:
-            - test
+          filters:
+            branches:
+              only:
+                - feat/user
