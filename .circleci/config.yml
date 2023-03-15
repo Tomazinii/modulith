@@ -1,15 +1,38 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
-      - image: python:3.8
+      - image: circleci/python:3.9.0
+    working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            pip install -r requirements.txt
-            pip install pytest
-      - run:
-          name: Run tests
-          command: pytest
+      - run: pip install -r requirements.txt
+  test:
+    docker:
+      - image: circleci/python:3.9.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: pytest
+  deploy:
+    docker:
+      - image: circleci/aws-cli:latest
+    steps:
+      - checkout
+      - run: |
+          aws configure set aws_access_key_id AKIA5XODLY3JH2VOKYXD
+          aws configure set aws_secret_access_key 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
+      - run: |
+          aws elasticbeanstalk create-application-version --application-name my-application --version-label $CIRCLE_SHA1 --source-bundle S3Bucket=my-bucket,S3Key=my-application/$CIRCLE_SHA1.zip
+          aws elasticbeanstalk update-environment --environment-name my-environment --version-label $CIRCLE_SHA1
+workflows:
+  build-test-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
