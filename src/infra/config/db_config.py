@@ -1,20 +1,20 @@
 import psycopg2
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from core.base import settings
 
 conn = psycopg2.connect(
-    host="dbpostgres",
-    database="ecommerce",
-    user="postgres",
-    password="123"
+    host=settings.HOST,
+    database=settings.DATABASE,
+    user=settings.USER,
+    password=settings.PASSWORD,
 )
 
 
 class DBConnectionHandler:
 
     def __init__(self) -> None:
-        self.__connection_string = "postgresql://postgres:123@dbpostgres:5432/ecommerce"
+        self.__connection_string = settings.DATABASE_URL
         self.session = None
 
     def get_db(self):

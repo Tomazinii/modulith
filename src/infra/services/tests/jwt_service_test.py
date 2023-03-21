@@ -7,8 +7,6 @@ from src.infra.services import JwtService
 import pytest
 import secrets
 from src.domain.tests import mock_user
-import settings
-from unittest.mock import Mock
 
 from src.domain.entities import Users
 

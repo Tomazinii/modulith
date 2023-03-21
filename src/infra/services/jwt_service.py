@@ -4,7 +4,7 @@ import json
 from src.domain.services.interface import JwtServiceInterface
 from src.domain.entities import Users
 import jwt
-import settings
+from core.base import settings
 
 
 class JwtService(JwtServiceInterface):

@@ -38,8 +38,8 @@ jobs:
             aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
             aws configure set default.region sa-east-1
 
-            eb init -p python-3.8 monolith --region sa-east-1
-            eb deploy Monolith-env
+            eb init -p docker $APPLICATION --region sa-east-1
+            eb deploy $AMBIENT
 
 workflows:
   build-and-deploy:
