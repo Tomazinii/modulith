@@ -38,6 +38,7 @@ jobs:
             aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
             aws configure set default.region sa-east-1
 
+
             eb init -p docker $APPLICATION --region sa-east-1
             eb deploy $AMBIENT
 
