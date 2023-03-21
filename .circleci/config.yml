@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   build:
+    environment:
+      DATABASE_URL: $DATABASE_URL
     docker:
       - image: circleci/python:3.8
 
