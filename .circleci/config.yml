@@ -16,10 +16,6 @@ jobs:
 
       - run: pytest
 
-      - run:
-          name: Run migrations
-          command: |
-            alembic upgrade head
 
   deploy:
     docker:
