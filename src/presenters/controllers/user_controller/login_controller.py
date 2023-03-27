@@ -1,6 +1,3 @@
-import http
-from tkinter.messagebox import NO
-from turtle import ht
 from src.presenters.helpers import HttpRequest, HttpResponse
 from typing import Type
 from src.domain.use_case_interface.user import AuthenticationUserInterface

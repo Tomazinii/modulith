@@ -1,4 +1,3 @@
-from flask import request
 from src.main.interfaces.routes import RouteInterface
 from src.presenters.helpers import HttpRequest, HttpResponse
 from typing import Type

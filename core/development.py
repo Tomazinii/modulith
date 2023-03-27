@@ -11,8 +11,8 @@ REFRESH_TOKEN_EXPIRATION = datetime.datetime.utcnow() + datetime.timedelta(weeks
 
 
 
-DATABASE_URL = "postgresql://postgres:123@dbpostgres:5432/ecommerce"
-HOST = "dbpostgres"
+DATABASE_URL = "postgresql://postgres:123@localhost:5432/ecommerce"
+HOST = "localhost"
 DATABASE = "ecommerce"
 USER = "postgres"
 PASSWORD = 123
